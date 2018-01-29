@@ -1,0 +1,153 @@
+
+{
+	"z-block:php": {
+		"prefix": "z-block:php",
+		"body": "\n{>php}\n${1:Alert body ...}\n{\\>}\n",
+		"description": "PHP 代码块",
+		"scope": ""
+    },
+    "z-block:js": {
+		"prefix": "z-block:js",
+		"body": "\n{>js}\n${1:Alert body ...}\n{\\>}\n",
+		"description": "JS脚本 代码块",
+		"scope": ""
+    },
+    "z-block:css": {
+		"prefix": "z-block:css",
+		"body": "\n{>css}\n${1:Alert body ...}\n{\\>}\n",
+		"description": "CSS样式 代码块",
+		"scope": ""
+    },
+    "z-block:text": {
+		"prefix": "z-block:text",
+		"body": "\n{>text}\n${1:Alert body ...}\n{/>}\n",
+		"description": "普通文本 代码块",
+		"scope": ""
+    },
+    "z-line:php": {
+		"prefix": "z-line:php",
+		"body": "\n{> ${1:Alert body ... }\n",
+		"description": "php 代码行",
+		"scope": ""
+    },
+    "z-note": {
+		"prefix": "z-note",
+		"body": "\n{* ${1:Alert body ... *}\n",
+		"description": "注释说明",
+		"scope": ""
+    },
+    "z-for:while": {
+		"prefix": "z-for:while",
+		"body": "\n{for:${1:true}}\n${2:Alert body ...}\n{/for}\n",
+		"description": "while 循环 第一个是判断语句",
+		"scope": ""
+    },
+    "z-for:foreach": {
+		"prefix": "z-for:foreach",
+		"body": "\n{for:${1:$data},${2:$item}}\n${3:Alert body ...}\n{/for}\n",
+		"description": "foreach 循环",
+		"scope": ""
+    },
+    "z-for:forelse": {
+		"prefix": "z-for:forelse",
+		"body": "\n{for:${1:$data},${2:$item}}\n${3:Alert body ...}\n{forelse}\n${4:Is Empty ...}\n{/for}\n",
+		"description": "如果不为空执行 foreach 循环 为空执行 第二部分",
+		"scope": ""
+    },
+    "z-for": {
+		"prefix": "z-for",
+		"body": "\n{for:${1:$data},${2:$item},${3:$length}}\n${4:Alert body ...}\n{/for}\n",
+		"description": "for 循环",
+		"scope": ""
+    },
+    "z-if": {
+		"prefix": "z-if",
+		"body": "\n{if:${1:true}}\n${2:Alert body ...}\n{/if}\n",
+		"description": "if 第一个是判断语句",
+		"scope": ""
+    },
+    "z-if:default": {
+		"prefix": "z-if:default",
+		"body": "\n{if:${1:true},${2:''}}\n",
+		"description": "如果 $1 正确输出 $2",
+		"scope": ""
+    },
+    "z-if:lamada": {
+		"prefix": "z-if:lamada",
+		"body": "\n{if:${1:true},${2:''},${3:''}}\n",
+		"description": "如果 $1 正确输出 $2 否则输出 $3",
+		"scope": ""
+    },
+    "z-elseif": {
+		"prefix": "z-elseif",
+		"body": "\n{elseif:${1:true}}\n",
+		"description": "elseif ",
+		"scope": ""
+    },
+    "z-switch": {
+		"prefix": "z-switch",
+		"body": "\n{switch:${1:$data},${2:true}}\n\t${3:Alert body ...}\n\t{break}\n{default}\n\t${4:Alert body ...}\n\t{breack}{/switch}\n",
+		"description": "switch ",
+		"scope": ""
+    },
+    "z-file:css": {
+		"prefix": "z-file:css",
+		"body": "\n{css href=${1:file}.css}\n",
+		"description": "引入css文件",
+		"scope": ""
+    },
+    "z-file:js": {
+		"prefix": "z-file:js",
+		"body": "\n{js src=${1:file}.js}\n",
+		"description": "引入js文件",
+		"scope": ""
+    },
+    "z-file:php": {
+		"prefix": "z-file:php",
+		"body": "\n{php file=${1:file}.php}\n",
+		"description": "引入php文件",
+		"scope": ""
+    },
+    "z-file:tpl": {
+		"prefix": "z-file:tpl",
+		"body": "\n{tpl file=${1:file}}\n",
+		"description": "加载模板文件",
+		"scope": ""
+    },
+    "z-extend": {
+		"prefix": "z-extend",
+		"body": "\n{extend:${1:file},[${2:''}]}\n",
+		"description": "加载模板文件并传递 [] 值",
+		"scope": ""
+    },
+    "z-url": {
+		"prefix": "z-url",
+		"body": "{url:${1:/}}",
+		"description": "输出链接",
+		"scope": ""
+    },
+    "z-use": {
+		"prefix": "z-use",
+		"body": "{use:${1:Zodream}}",
+		"description": "使用命名空间",
+		"scope": ""
+    },
+    "z-header": {
+		"prefix": "z-header",
+		"body": "\n{header:}\n",
+		"description": "输出已注册的头部资源，注册的css样式等",
+		"scope": ""
+    },
+    "z-footer": {
+		"prefix": "z-footer",
+		"body": "\n{footer:}\n",
+		"description": "输出已注册的尾部资源，注册的js脚本等",
+		"scope": ""
+    },
+    "z-this": {
+		"prefix": "z-this",
+		"body": "\n{this.${1:title}=${1:ZoDream}}\n",
+		"description": "设置全局变量",
+		"scope": ""
+    }
+}
