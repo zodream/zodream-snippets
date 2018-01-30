@@ -1,0 +1,164 @@
+{
+    "z-time": {
+		"prefix": "z-time",
+		"body": "<?=$$this->time(${1:$$item->created_at})?>",
+		"description": "输出格式化时间",
+		"scope": ""
+    },
+    "z-time:ago": {
+		"prefix": "z-time:ago",
+		"body": "<?=$$this->ago(${1:$$item->created_at})?>",
+		"description": "输出格式化时间为多久之前",
+		"scope": ""
+    },
+    "z-translate": {
+		"prefix": "z-translate",
+		"body": "<?=$$this->t(${1:''})?>",
+		"description": "输出翻译的文字",
+		"scope": ""
+    },
+    "z-url": {
+		"prefix": "z-url",
+		"body": "<?=$$this->url(${1:'./'})?>",
+		"description": "输出网址",
+		"scope": ""
+    },
+    "z-asset": {
+		"prefix": "z-asset",
+		"body": "<?=$$this->asset(${1:'./'})?>",
+		"description": "输出资源网址",
+		"scope": ""
+    },
+    "z-extend": {
+		"prefix": "z-extend",
+		"body": "$$this->extend(${1:'layouts/header'});",
+		"description": "引入其他页面",
+		"scope": ""
+    },
+    "z-extend:full": {
+		"prefix": "z-extend:full",
+		"body": "<?php $$this->extend(${1:'layouts/footer'});?>",
+		"description": "引入其他页面",
+		"scope": ""
+    },
+    "z-extend:and": {
+		"prefix": "z-extend:and",
+		"body": "->extend(${1:'layouts/header'})",
+		"description": "引入其他页面",
+		"scope": ""
+    },
+    "z-register:js": {
+		"prefix": "z-register:js",
+		"body": "$$this->registerJs(${1:$$js});",
+		"description": "添加js脚本",
+		"scope": ""
+    },
+    "z-register:js-and": {
+		"prefix": "z-register:js-and",
+		"body": "->registerJs(${1:$$js})",
+		"description": "添加js脚本",
+		"scope": ""
+    },
+    "z-register:js-full": {
+		"prefix": "z-register:js-full",
+		"body": "\n${2:$$js} = <<<JS\n${1:Alert body ...}\n<<<JS;\n$$this->registerJs(${2:$$js});",
+		"description": "添加js脚本",
+		"scope": ""
+    },
+    "z-register:js-file": {
+		"prefix": "z-register:js-file",
+		"body": "$$this->registerJsFile(${1:'@jquery.min.js'});",
+		"description": "添加js脚本",
+		"scope": ""
+    },
+    "z-register:js-file-and": {
+		"prefix": "z-register:js-file-and",
+		"body": "->registerJsFile(${1:'@jquery.min.js'})",
+		"description": "添加js脚本",
+		"scope": ""
+    },
+    "z-register:css": {
+		"prefix": "z-register:css",
+		"body": "$$this->registerCss(${1:$$style});",
+		"description": "添加css样式",
+		"scope": ""
+    },
+    "z-register:css-and": {
+		"prefix": "z-register:css-and",
+		"body": "->registerJs(${1:$$style})",
+		"description": "添加css样式",
+		"scope": ""
+    },
+    "z-register:css-full": {
+		"prefix": "z-register:css-full",
+		"body": "\n${2:$$style} = <<<CSS\n${1:Alert body ...}\n<<<CSS;\n$$this->registerCss(${2:$$style});",
+		"description": "添加css样式",
+		"scope": ""
+    },
+    "z-register:css-file": {
+		"prefix": "z-register:css-file",
+		"body": "$$this->registerCssFile(${1:'@bootstrap.min.js'});",
+		"description": "添加css样式",
+		"scope": ""
+    },
+    "z-register:css-file-and": {
+		"prefix": "z-register:css-file-and",
+		"body": "->registerCssFile(${1:'@bootstrap.min.js'})",
+		"description": "添加css样式",
+		"scope": ""
+    },
+    "z-title": {
+		"prefix": "z-title",
+		"body": "<?=$$this->title?>",
+		"description": "输出标题",
+		"scope": ""
+    },
+    "z-title:assign": {
+		"prefix": "z-title:assign",
+		"body": "$$this->title = 'ZoDream';",
+		"description": "赋值标题",
+		"scope": ""
+    },
+    "z-header": {
+		"prefix": "z-header",
+		"body": "<?=$$this->header()?>",
+		"description": "输出头部注册资源",
+		"scope": ""
+    },
+    "z-footer": {
+		"prefix": "z-footer",
+		"body": "<?=$$this->footer()?>",
+		"description": "输出尾部注册资源",
+		"scope": ""
+    },
+    "z-tpl": {
+		"prefix": "z-tpl",
+		"body": "<?php\ndefined('APP_DIR') or exit();\n/** @var $$this \\Zodream\\Template\\View */\n$$this->title = '${2:ZoDream}';\n$$this->extend('layouts/header');\n?>\n${1:Alert body ...}\n<?php $$this->extend('layouts/footer');?>",
+		"description": "页面模板",
+		"scope": ""
+    },
+    "z-tpl:header": {
+		"prefix": "z-tpl:header",
+        "body": "<?php\ndefined('APP_DIR') or exit();\n/** @var $$this \\Zodream\\Template\\View */\n?>\n<!DOCTYPE html>\n<html lang=\"<?=$$this->get('language', 'zh-CN')?>\">\n\t<head>\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n\t\t<meta name=\"Description\" content=\"<?=$$this->description?>\" />\n\t\t<meta name=\"keywords\" content=\"<?=$$this->keywords?>\" />\n\t\t<title><?=$$this->title?></title>\n\t\t<?=$this->header();?>\n\t</head>\n\t<body>",
+		"description": "头部公共模板",
+		"scope": ""
+    },
+    "z-tpl:footer": {
+		"prefix": "z-tpl:footer",
+		"body": "<?php\ndefined('APP_DIR') or exit();\n/** @var $$this \\Zodream\\Template\\View */\n?>\n\t<?=$$this->footer()?>\n</body>\n</html>",
+		"description": "尾部公共模板",
+		"scope": ""
+    },
+    "z-foreach": {
+		"prefix": "z-foreach",
+		"body": "\n<?php\nforeach(${1:$$model_list} as $item):?>\n${2:Alert body ...}\n<?php endforeach;?>\n",
+		"description": "循环输出",
+		"scope": ""
+    },
+    "z-page-link": {
+		"prefix": "z-page-link",
+		"body": "\n<?=${1:$$model_list}->getLink()?>\n",
+		"description": "输出分页链接",
+		"scope": ""
+    }
+}
