@@ -107,7 +107,7 @@
     "z-foreach": {
 		"prefix": "z-foreach",
 		"body": [
-            "<?php foreach(${1:$$model_list} as $item):?>",
+            "<?php foreach(${1:$$model_list} as $$item):?>",
             "   ${2:Alert body ...}",
             "<?php endforeach;?>"
         ],
