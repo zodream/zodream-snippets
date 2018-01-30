@@ -1,121 +1,301 @@
 {
+	"z-time": {
+		"prefix": "z-time",
+		"body": "<?=$$this->time(${1:$$item->created_at})?>",
+		"description": "输出格式化时间",
+		"scope": ""
+    },
+    "z-time:ago": {
+		"prefix": "z-time:ago",
+		"body": "<?=$$this->ago(${1:$$item->created_at})?>",
+		"description": "输出格式化时间为多久之前",
+		"scope": ""
+    },
+    "z-translate": {
+		"prefix": "z-translate",
+		"body": "<?=$$this->t(${1:''})?>",
+		"description": "输出翻译的文字",
+		"scope": ""
+    },
+    "z-url:php": {
+		"prefix": "z-url:php",
+		"body": "<?=$$this->url(${1:'./'})?>",
+		"description": "输出网址",
+		"scope": ""
+    },
+    "z-asset": {
+		"prefix": "z-asset",
+		"body": "<?=$$this->asset(${1:'./'})?>",
+		"description": "输出资源网址",
+		"scope": ""
+	},
+	"z-extend:full": {
+		"prefix": "z-extend:full",
+		"body": "<?php $$this->extend(${1:'layouts/footer'});?>",
+		"description": "引入其他页面",
+		"scope": ""
+	},
+	"z-title": {
+		"prefix": "z-title",
+		"body": "<?=$$this->title?>",
+		"description": "输出标题",
+		"scope": ""
+	},
+	"z-header:php": {
+		"prefix": "z-header:php",
+		"body": "<?=$$this->header()?>",
+		"description": "输出头部注册资源",
+		"scope": ""
+    },
+    "z-footer:php": {
+		"prefix": "z-footer:php",
+		"body": "<?=$$this->footer()?>",
+		"description": "输出尾部注册资源",
+		"scope": ""
+    },
+    "z-tpl:php": {
+		"prefix": "z-tpl:php",
+		"body": [
+            "<?php",
+            "defined('APP_DIR') or exit();",
+            "/** @var $$this \\Zodream\\Template\\View */",
+            "$$this->title = '${2:ZoDream}';",
+            "$$this->extend('layouts/header');",
+            "?>",
+            "${1:Alert body ...}",
+            "<?php $$this->extend('layouts/footer');?>"
+        ],
+		"description": "页面模板",
+		"scope": ""
+    },
+    "z-tpl:header:php": {
+		"prefix": "z-tpl:header:php",
+        "body": [
+            "<?php",
+            "defined('APP_DIR') or exit();",
+            "/** @var $$this \\Zodream\\Template\\View */",
+            "?>",
+            "<!DOCTYPE html>",
+            "<html lang=\"<?=$$this->get('language', 'zh-CN')?>\">",
+            "   <head>",
+            "       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+            "       <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />",
+            "       <meta name=\"Description\" content=\"<?=$$this->description?>\" />",
+            "       <meta name=\"keywords\" content=\"<?=$$this->keywords?>\" />",
+            "       <title><?=$$this->title?></title>",
+            "       <?=$this->header();?>",
+            "   </head>",
+            "   <body>"
+        ],
+		"description": "头部公共模板",
+		"scope": ""
+    },
+    "z-tpl:footer:php": {
+		"prefix": "z-tpl:footer:php",
+		"body": [
+            "<?php",
+            "defined('APP_DIR') or exit();",
+            "/** @var $$this \\Zodream\\Template\\View */",
+            "?>",
+            "   <?=$$this->footer()?>",
+            "   </body>",
+            "</html>"
+        ],
+		"description": "尾部公共模板",
+		"scope": ""
+    },
+    "z-foreach": {
+		"prefix": "z-foreach",
+		"body": [
+            "<?php foreach(${1:$$model_list} as $item):?>",
+            "   ${2:Alert body ...}",
+            "<?php endforeach;?>"
+        ],
+		"description": "循环输出",
+		"scope": ""
+    },
+    "z-if:php": {
+		"prefix": "z-if",
+		"body": [
+            "<?php if(${1:$model}):?>",
+            "   ${2:Alert body ...}",
+            "<?php endif;?>"
+        ],
+		"description": "if输出",
+		"scope": ""
+    },
+    "z-page-link": {
+		"prefix": "z-page-link",
+		"body": "<?=${1:$$model_list}->getLink()?>",
+		"description": "输出分页链接",
+		"scope": ""
+    },
+
+
+
 	"z-block:php": {
 		"prefix": "z-block:php",
-		"body": "\n{>php}\n${1:Alert body ...}\n{\\>}\n",
+		"body": [
+            "{>php}",
+            "${1:Alert body ...}",
+            "{/>}"
+        ],
 		"description": "PHP 代码块",
 		"scope": ""
 	},
 	"z-block:js": {
 		"prefix": "z-block:js",
-		"body": "\n{>js}\n${1:Alert body ...}\n{\\>}\n",
+        "body": [
+            "{>js}",
+            "${1:Alert body ...}",
+            "{/>}"
+        ],
 		"description": "JS脚本 代码块",
 		"scope": ""
 	},
 	"z-block:css": {
 		"prefix": "z-block:css",
-		"body": "\n{>css}\n${1:Alert body ...}\n{\\>}\n",
+		"body": [
+            "{>css}",
+            "${1:Alert body ...}",
+            "{/>}"
+        ],
 		"description": "CSS样式 代码块",
 		"scope": ""
 	},
 	"z-block:text": {
 		"prefix": "z-block:text",
-		"body": "\n{>text}\n${1:Alert body ...}\n{/>}\n",
+		"body": [
+            "{>text}",
+            "${1:Alert body ...}",
+            "{/>}"
+        ],
 		"description": "普通文本 代码块",
 		"scope": ""
 	},
 	"z-line:php": {
 		"prefix": "z-line:php",
-		"body": "\n{> ${1:Alert body ... }\n",
+		"body": "{> ${1:Alert body ... }",
 		"description": "php 代码行",
 		"scope": ""
 	},
 	"z-note": {
 		"prefix": "z-note",
-		"body": "\n{* ${1:Alert body ... *}\n",
+		"body": "{* ${1:Alert body ... *}",
 		"description": "注释说明",
 		"scope": ""
 	},
 	"z-for:while": {
 		"prefix": "z-for:while",
-		"body": "\n{for:${1:true}}\n${2:Alert body ...}\n{/for}\n",
+		"body": [
+            "{for:${1:true}}",
+            "${2:Alert body ...}",
+            "{/for}"
+        ],
 		"description": "while 循环 第一个是判断语句",
 		"scope": ""
 	},
 	"z-for:foreach": {
 		"prefix": "z-for:foreach",
-		"body": "\n{for:${1:$data},${2:$item}}\n${3:Alert body ...}\n{/for}\n",
+		"body": [
+            "{for:${1:$data},${2:$item}}",
+            "${3:Alert body ...}",
+            "{/for}"
+        ],
 		"description": "foreach 循环",
 		"scope": ""
 	},
 	"z-for:forelse": {
 		"prefix": "z-for:forelse",
-		"body": "\n{for:${1:$data},${2:$item}}\n${3:Alert body ...}\n{forelse}\n${4:Is Empty ...}\n{/for}\n",
+		"body": [
+            "{for:${1:$data},${2:$item}}",
+            "${3:Alert body ...}",
+            "{forelse}",
+            "${4:Is Empty ...}",
+            "{/for}"
+        ],
 		"description": "如果不为空执行 foreach 循环 为空执行 第二部分",
 		"scope": ""
 	},
 	"z-for": {
 		"prefix": "z-for",
-		"body": "\n{for:${1:$data},${2:$item},${3:$length}}\n${4:Alert body ...}\n{/for}\n",
+		"body": [
+            "{for:${1:$data},${2:$item},${3:$length}}",
+            "${4:Alert body ...}",
+            "{/for}"
+        ],
 		"description": "for 循环",
 		"scope": ""
 	},
 	"z-if": {
 		"prefix": "z-if",
-		"body": "\n{if:${1:true}}\n${2:Alert body ...}\n{/if}\n",
+		"body": [
+            "{if:${1:true}}",
+            "${2:Alert body ...}",
+            "{/if}"
+        ],
 		"description": "if 第一个是判断语句",
 		"scope": ""
 	},
 	"z-if:default": {
 		"prefix": "z-if:default",
-		"body": "\n{if:${1:true},${2:''}}\n",
+		"body": "{if:${1:true},${2:''}}",
 		"description": "如果 $1 正确输出 $2",
 		"scope": ""
 	},
 	"z-if:lamada": {
 		"prefix": "z-if:lamada",
-		"body": "\n{if:${1:true},${2:''},${3:''}}\n",
+		"body": "{if:${1:true},${2:''},${3:''}}",
 		"description": "如果 $1 正确输出 $2 否则输出 $3",
 		"scope": ""
 	},
 	"z-elseif": {
 		"prefix": "z-elseif",
-		"body": "\n{elseif:${1:true}}\n",
+		"body": "{elseif:${1:true}}",
 		"description": "elseif ",
 		"scope": ""
 	},
 	"z-switch": {
 		"prefix": "z-switch",
-		"body": "\n{switch:${1:$data},${2:true}}\n\t${3:Alert body ...}\n\t{break}\n{default}\n\t${4:Alert body ...}\n\t{breack}{/switch}\n",
+		"body": [
+            "{switch:${1:$data},${2:true}}",
+            "   ${3:Alert body ...}",
+            "   {break}",
+            "{default}",
+            "   ${4:Alert body ...}",
+            "   {breack}",
+            "{/switch}"
+        ],
 		"description": "switch ",
 		"scope": ""
 	},
 	"z-file:css": {
 		"prefix": "z-file:css",
-		"body": "\n{css href=${1:file}.css}\n",
+		"body": "{css href=${1:file}.css}",
 		"description": "引入css文件",
 		"scope": ""
 	},
 	"z-file:js": {
 		"prefix": "z-file:js",
-		"body": "\n{js src=${1:file}.js}\n",
+		"body": "{js src=${1:file}.js}",
 		"description": "引入js文件",
 		"scope": ""
 	},
 	"z-file:php": {
 		"prefix": "z-file:php",
-		"body": "\n{php file=${1:file}.php}\n",
+		"body": "{php file=${1:file}.php}",
 		"description": "引入php文件",
 		"scope": ""
 	},
 	"z-file:tpl": {
 		"prefix": "z-file:tpl",
-		"body": "\n{tpl file=${1:file}}\n",
+		"body": "{tpl file=${1:file}}",
 		"description": "加载模板文件",
 		"scope": ""
 	},
 	"z-extend": {
 		"prefix": "z-extend",
-		"body": "\n{extend:${1:file},[${2:''}]}\n",
+		"body": "{extend:${1:file},[${2:''}]}",
 		"description": "加载模板文件并传递 [] 值",
 		"scope": ""
 	},
@@ -133,20 +313,59 @@
 	},
 	"z-header": {
 		"prefix": "z-header",
-		"body": "\n{header:}\n",
+		"body": "{header:}",
 		"description": "输出已注册的头部资源，注册的css样式等",
 		"scope": ""
 	},
 	"z-footer": {
 		"prefix": "z-footer",
-		"body": "\n{footer:}\n",
+		"body": "{footer:}",
 		"description": "输出已注册的尾部资源，注册的js脚本等",
 		"scope": ""
 	},
 	"z-this": {
 		"prefix": "z-this",
-		"body": "\n{this.${1:title}=${1:ZoDream}}\n",
+		"body": "{this.${1:title}=${1:ZoDream}}",
 		"description": "设置全局变量",
 		"scope": ""
-	}
+	},
+	"z-tpl": {
+		"prefix": "z-tpl",
+		"body": [
+            "{this.title=${1:ZoDream}}",
+            "{extend:layouts/header}",
+            "${2:Alert body ...}",
+            "{extend:layouts/footer}"
+        ],
+		"description": "页面模板",
+		"scope": ""
+    },
+    "z-tpl:header": {
+		"prefix": "z-tpl:header",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"{$$language,zh-CN}\">",
+            "   <head>",
+            "       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+            "       <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />",
+            "       <meta name=\"Description\" content=\"{this.description}\" />",
+            "       <meta name=\"keywords\" content=\"{this.keywords}\" />",
+            "       <title>{this.title}</title>",
+            "       {header:}",
+            "   </head>",
+            "   <body>"
+        ],
+		"description": "头部公共模板",
+		"scope": ""
+    },
+    "z-tpl:footer": {
+		"prefix": "z-tpl:footer",
+		"body": [
+            "   {footer:}",
+            "   </body>",
+            "</html>"
+        ],
+		"description": "尾部公共模板",
+		"scope": ""
+    }
 }
