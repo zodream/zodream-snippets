@@ -53,7 +53,7 @@
 		"body": [
             "${2:$$js} = <<<JS",
             "${1:Alert body ...}",
-            "<<<JS;",
+            "JS;",
             "$$this->registerJs(${2:$$js});"
 		],
 		"description": "添加js脚本",
@@ -88,7 +88,7 @@
         "body": [
             "${2:$$style} = <<<CSS",
             "${1:Alert body ...}",
-            "<<<CSS;",
+            "CSS;",
             "$$this->registerCss(${2:$$style});"
         ],
 		"description": "添加css样式",
