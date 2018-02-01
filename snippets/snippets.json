@@ -57,8 +57,9 @@
 		"prefix": "z-tpl:php",
 		"body": [
             "<?php",
-            "defined('APP_DIR') or exit();",
-            "/** @var $$this \\Zodream\\Template\\View */",
+			"defined('APP_DIR') or exit();",
+			"use Zodream\\Template\\View;",
+            "/** @var $$this View */",
             "$$this->title = '${2:ZoDream}';",
             "$$this->extend('layouts/header');",
             "?>",
@@ -73,7 +74,8 @@
         "body": [
             "<?php",
             "defined('APP_DIR') or exit();",
-            "/** @var $$this \\Zodream\\Template\\View */",
+            "use Zodream\\Template\\View;",
+            "/** @var $$this View */",
             "?>",
             "<!DOCTYPE html>",
             "<html lang=\"<?=$$this->get('language', 'zh-CN')?>\">",
@@ -95,7 +97,8 @@
 		"body": [
             "<?php",
             "defined('APP_DIR') or exit();",
-            "/** @var $$this \\Zodream\\Template\\View */",
+            "use Zodream\\Template\\View;",
+            "/** @var $$this View */",
             "?>",
             "   <?=$$this->footer()?>",
             "   </body>",
