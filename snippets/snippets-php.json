@@ -1,116 +1,116 @@
 {
-    "z-time": {
+	"z-time": {
 		"prefix": "z-time",
 		"body": "$$this->time(${1:$$item->created_at})",
 		"description": "输出格式化时间",
 		"scope": ""
-    },
-    "z-time:ago": {
+	},
+	"z-time:ago": {
 		"prefix": "z-time:ago",
 		"body": "$$this->ago(${1:$$item->created_at})",
 		"description": "格式化时间为多久之前",
 		"scope": ""
-    },
-    "z-translate": {
+	},
+	"z-translate": {
 		"prefix": "z-translate",
 		"body": "$$this->t(${1:''})",
 		"description": "翻译的文字",
 		"scope": ""
-    },
-    "z-url:php": {
+	},
+	"z-url:php": {
 		"prefix": "z-url:php",
 		"body": "$$this->url(${1:'./'})",
 		"description": "返回网址",
 		"scope": ""
-    },
-    "z-extend": {
+	},
+	"z-extend": {
 		"prefix": "z-extend",
 		"body": "$$this->extend(${1:'layouts/header'});",
 		"description": "引入其他页面",
 		"scope": ""
-    },
-    
-    "z-extend:and": {
+	},
+
+	"z-extend:and": {
 		"prefix": "z-extend:and",
 		"body": "->extend(${1:'layouts/header'})",
 		"description": "引入其他页面",
 		"scope": ""
-    },
-    "z-register:js": {
+	},
+	"z-register:js": {
 		"prefix": "z-register:js",
 		"body": "$$this->registerJs(${1:$$js});",
 		"description": "添加js脚本",
 		"scope": ""
-    },
-    "z-register:js-and": {
+	},
+	"z-register:js-and": {
 		"prefix": "z-register:js-and",
 		"body": "->registerJs(${1:$$js})",
 		"description": "添加js脚本",
 		"scope": ""
-    },
-    "z-register:js-full": {
+	},
+	"z-register:js-full": {
 		"prefix": "z-register:js-full",
 		"body": [
-            "${2:$$js} = <<<JS",
-            "${1:Alert body ...}",
-            "JS;",
-            "$$this->registerJs(${2:$$js});"
+			"${2:$$js} = <<<JS",
+			"${1:Alert body ...}",
+			"JS;",
+			"$$this->registerJs(${2:$$js});"
 		],
 		"description": "添加js脚本",
 		"scope": ""
-    },
-    "z-register:js-file": {
+	},
+	"z-register:js-file": {
 		"prefix": "z-register:js-file",
 		"body": "$$this->registerJsFile(${1:'@jquery.min.js'});",
 		"description": "添加js脚本",
 		"scope": ""
-    },
-    "z-register:js-file-and": {
+	},
+	"z-register:js-file-and": {
 		"prefix": "z-register:js-file-and",
 		"body": "->registerJsFile(${1:'@jquery.min.js'})",
 		"description": "添加js脚本",
 		"scope": ""
-    },
-    "z-register:css": {
+	},
+	"z-register:css": {
 		"prefix": "z-register:css",
 		"body": "$$this->registerCss(${1:$$style});",
 		"description": "添加css样式",
 		"scope": ""
-    },
-    "z-register:css-and": {
+	},
+	"z-register:css-and": {
 		"prefix": "z-register:css-and",
 		"body": "->registerJs(${1:$$style})",
 		"description": "添加css样式",
 		"scope": ""
-    },
-    "z-register:css-full": {
+	},
+	"z-register:css-full": {
 		"prefix": "z-register:css-full",
-        "body": [
-            "${2:$$style} = <<<CSS",
-            "${1:Alert body ...}",
-            "CSS;",
-            "$$this->registerCss(${2:$$style});"
-        ],
+		"body": [
+			"${2:$$style} = <<<CSS",
+			"${1:Alert body ...}",
+			"CSS;",
+			"$$this->registerCss(${2:$$style});"
+		],
 		"description": "添加css样式",
 		"scope": ""
-    },
-    "z-register:css-file": {
+	},
+	"z-register:css-file": {
 		"prefix": "z-register:css-file",
-		"body": "$$this->registerCssFile(${1:'@bootstrap.min.js'});",
+		"body": "$$this->registerCssFile(${1:'@bootstrap.min.css'});",
 		"description": "添加css样式",
 		"scope": ""
-    },
-    "z-register:css-file-and": {
+	},
+	"z-register:css-file-and": {
 		"prefix": "z-register:css-file-and",
-		"body": "->registerCssFile(${1:'@bootstrap.min.js'})",
+		"body": "->registerCssFile(${1:'@bootstrap.min.css'})",
 		"description": "添加css样式",
 		"scope": ""
-    },
-    
-    "z-title:assign": {
+	},
+
+	"z-title:assign": {
 		"prefix": "z-title:assign",
 		"body": "$$this->title = 'ZoDream';",
 		"description": "赋值标题",
 		"scope": ""
-    }
+	}
 }

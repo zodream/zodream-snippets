@@ -85,7 +85,7 @@
             "       <meta name=\"Description\" content=\"<?=$$this->description?>\" />",
             "       <meta name=\"keywords\" content=\"<?=$$this->keywords?>\" />",
             "       <title><?=$$this->title?></title>",
-            "       <?=$this->header();?>",
+            "       <?=$$this->header();?>",
             "   </head>",
             "   <body>"
         ],
