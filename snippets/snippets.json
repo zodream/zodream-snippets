@@ -201,7 +201,7 @@
 	"z-for:foreach": {
 		"prefix": "z-for:foreach",
 		"body": [
-            "{for:${1:$data},${2:$item}}",
+            "{for:${1:$$data},${2:$$item}}",
             "${3:Alert body ...}",
             "{/for}"
         ],
@@ -211,7 +211,7 @@
 	"z-for:forelse": {
 		"prefix": "z-for:forelse",
 		"body": [
-            "{for:${1:$data},${2:$item}}",
+            "{for:${1:$$data},${2:$$item}}",
             "${3:Alert body ...}",
             "{forelse}",
             "${4:Is Empty ...}",
@@ -223,7 +223,7 @@
 	"z-for": {
 		"prefix": "z-for",
 		"body": [
-            "{for:${1:$data},${2:$item},${3:$length}}",
+            "{for:${1:$$data},${2:$$item},${3:$$length}}",
             "${4:Alert body ...}",
             "{/for}"
         ],
@@ -238,6 +238,18 @@
             "{/if}"
         ],
 		"description": "if 第一个是判断语句",
+		"scope": ""
+	},
+	"z-if:else": {
+		"prefix": "z-if:else",
+		"body": [
+            "{if:${1:true}}",
+			"${2:Alert body ...}",
+			"{else}",
+            "${3:Alert body ...}",
+            "{/if}"
+        ],
+		"description": "if and else",
 		"scope": ""
 	},
 	"z-if:default": {
@@ -261,7 +273,7 @@
 	"z-switch": {
 		"prefix": "z-switch",
 		"body": [
-            "{switch:${1:$data},${2:true}}",
+            "{switch:${1:$$data},${2:true}}",
             "   ${3:Alert body ...}",
             "   {break}",
             "{default}",
