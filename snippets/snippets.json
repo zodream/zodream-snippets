@@ -320,6 +320,12 @@
 		"description": "输出链接",
 		"scope": ""
 	},
+	"z-page": {
+		"prefix": "z-page",
+		"body": "{page:${1:$$model_list}}",
+		"description": "输出分页链接",
+		"scope": ""
+	},
 	"z-use": {
 		"prefix": "z-use",
 		"body": "{use:${1:Zodream}}",
