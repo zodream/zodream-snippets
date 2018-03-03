@@ -126,6 +126,18 @@
         ],
 		"description": "if输出",
 		"scope": ""
+	},
+	"z-if:else:php": {
+		"prefix": "z-if:else",
+		"body": [
+            "<?php if(${1:$model}):?>",
+			"   ${2:Alert body ...}",
+			"<?php else:?>",
+			"   ${3:Alert body ...}",
+            "<?php endif;?>"
+        ],
+		"description": "if输出",
+		"scope": ""
     },
     "z-page-link": {
 		"prefix": "z-page-link",
