@@ -126,7 +126,7 @@
             "       <?=$$this->header();?>",
             "   </head>",
 			"   <body>",
-			"   <?=$content?>",
+			"   <?=$$content?>",
             "   <?=$$this->footer()?>",
             "   </body>",
             "</html>"
