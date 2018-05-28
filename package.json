@@ -3,7 +3,7 @@
 	"displayName": "ZoDream Snippets",
 	"description": "ZoDream Template Snippets for VS Code",
 	"icon": "images/icon.png",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "zodream",
 	"license":"See License section in README.md",
 	"homepage":"https://github.com/zodream/zodream-snippets/blob/master/README.md",

@@ -131,7 +131,21 @@
             "   </body>",
             "</html>"
         ],
-		"description": "头部公共模板",
+		"description": "使用layout模式的公共模板",
+		"scope": ""
+	},
+	"z-tpl:php-with-layout": {
+		"prefix": "z-tpl:php-with-layout",
+		"body": [
+            "<?php",
+			"defined('APP_DIR') or exit();",
+			"use Zodream\\Template\\View;",
+            "/** @var $$this View */",
+            "$$this->title = '${2:ZoDream}';",
+            "?>",
+            "${1:Alert body ...}"
+        ],
+		"description": "使用 layout 模式的页面模板",
 		"scope": ""
     },
     "z-foreach": {
@@ -399,6 +413,15 @@
         ],
 		"description": "页面模板",
 		"scope": ""
+	},
+	"z-tpl-with-layout": {
+		"prefix": "z-tpl-with-layout",
+		"body": [
+            "{this.title=${1:ZoDream}}",
+            "${2:Alert body ...}"
+        ],
+		"description": "layout 模式的页面模板",
+		"scope": ""
     },
     "z-tpl:header": {
 		"prefix": "z-tpl:header",
@@ -416,6 +439,28 @@
             "   <body>"
         ],
 		"description": "头部公共模板",
+		"scope": ""
+	},
+	"z-tpl:layout": {
+		"prefix": "z-tpl:layout",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"{$$language,zh-CN}\">",
+            "   <head>",
+            "       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+            "       <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />",
+            "       <meta name=\"Description\" content=\"{this.description}\" />",
+            "       <meta name=\"keywords\" content=\"{this.keywords}\" />",
+            "       <title>{this.title}</title>",
+            "       {header:}",
+            "   </head>",
+			"   <body>",
+			"   {$content}",
+			"   {footer:}",
+            "   </body>",
+            "</html>"
+        ],
+		"description": "layout 公共模板",
 		"scope": ""
     },
     "z-tpl:footer": {
