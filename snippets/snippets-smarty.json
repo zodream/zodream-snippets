@@ -1,0 +1,74 @@
+{
+    "s-foreach": {
+		"prefix": "s-foreach",
+		"body": [
+            "<!-- {foreach from=${1:$$data} item=${2:item}} -->",
+            "${3:Alert body ...}",
+            "<!-- {/foreach} -->"
+        ],
+		"description": "foreach 循环",
+		"scope": ""
+    },
+    "s-foreach:full": {
+		"prefix": "s-foreach:full",
+		"body": [
+            "<!-- {foreach from=${1:$$data} item=${2:item} name=${3:name}} -->",
+            "<!-- {if $$smarty.foreach.${3:name}.last} -->",
+            "${4:Alert body ...}",
+            "<!-- {/if} -->",
+            "<!-- {/foreach} -->"
+        ],
+		"description": "foreach 循环",
+		"scope": ""
+    },
+    "s-if": {
+		"prefix": "s-if",
+		"body": [
+            "<!-- {if ${1:$$data eq ''}} -->",
+            "${2:Alert body ...}",
+            "<!-- {/if} -->"
+        ],
+		"description": "if 判断",
+		"scope": ""
+    },
+    "s-if:else": {
+		"prefix": "s-if:else",
+		"body": [
+            "<!-- {if ${1:$$data eq ''}} -->",
+            "${2:Alert body ...}",
+            "<!-- {else} -->",
+            "${3:Alert body ...}",
+            "<!-- {/if} -->"
+        ],
+		"description": "if 判断",
+		"scope": ""
+    },
+    "s-if:action": {
+		"prefix": "s-if:action",
+		"body": [
+            "<!-- ${1:模块} start -->",
+            "<!-- {if $$action eq '${2:profile}'} -->",
+            "${3:Alert body ...}",
+            "<!-- {/if} -->",
+            "<!-- ${1:模块} end -->"
+        ],
+		"description": "if 判断",
+		"scope": ""
+    },
+    "s-if:row": {
+		"prefix": "s-if:row",
+		"body": [
+            "{if ${1:$$data eq ''}}${2:Alert body ...}{/if}"
+        ],
+		"description": "if 判断",
+		"scope": ""
+    },
+    "s-lbi": {
+		"prefix": "s-lbi",
+		"body": [
+            "<!-- #BeginLibraryItem \"/library/${1:page_header}.lbi\" --><!-- #EndLibraryItem -->"
+        ],
+		"description": "引入lbi",
+		"scope": ""
+    }
+}
