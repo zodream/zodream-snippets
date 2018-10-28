@@ -161,7 +161,7 @@
     "z-if:php": {
 		"prefix": "z-if",
 		"body": [
-            "<?php if(${1:$model}):?>",
+            "<?php if(${1:$$model}):?>",
             "   ${2:Alert body ...}",
             "<?php endif;?>"
         ],
@@ -171,7 +171,7 @@
 	"z-if:else:php": {
 		"prefix": "z-if:else",
 		"body": [
-            "<?php if(${1:$model}):?>",
+            "<?php if(${1:$$model}):?>",
 			"   ${2:Alert body ...}",
 			"<?php else:?>",
 			"   ${3:Alert body ...}",
