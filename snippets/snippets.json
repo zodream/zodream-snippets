@@ -157,6 +157,16 @@
         ],
 		"description": "循环输出",
 		"scope": ""
+	},
+	"z-foreach-with-if": {
+		"prefix": "z-foreach-with-if",
+		"body": [
+            "<?php if(isset(${1:$$model_list})):foreach(${1:$$model_list} as $$item):?>",
+            "   ${2:Alert body ...}",
+            "<?php endforeach;endif;?>"
+        ],
+		"description": "循环输出",
+		"scope": ""
     },
     "z-if:php": {
 		"prefix": "z-if",
