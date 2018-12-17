@@ -16,6 +16,12 @@
 		"body": "<?=$$this->t(${1:''})?>",
 		"description": "输出翻译的文字",
 		"scope": ""
+	},
+	"z-text:php": {
+		"prefix": "z-text:php",
+		"body": "<?=$$this->text(${1:$$content})?>",
+		"description": "输出过滤后的内容",
+		"scope": ""
     },
     "z-url:php": {
 		"prefix": "z-url:php",
