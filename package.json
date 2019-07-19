@@ -36,5 +36,8 @@
 				"path": "./snippets/snippets-php.json"
  			}
 		]
+	},
+	"scripts": {
+        "build": "vsce package"
 	}
 }
