@@ -5,6 +5,12 @@
 		"description": "输出格式化时间",
 		"scope": ""
 	},
+	"z-text": {
+		"prefix": "z-text",
+		"body": "$$this->text(${1:$$item->content})",
+		"description": "输出格式化字符串，第二个参数为截取长度",
+		"scope": ""
+	},
 	"z-time:ago": {
 		"prefix": "z-time:ago",
 		"body": "$$this->ago(${1:$$item->created_at})",
