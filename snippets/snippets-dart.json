@@ -1,0 +1,57 @@
+{
+  "z-model": {
+		"prefix": "z-model",
+		"body": [
+            "@JsonSerializable()",
+            "class ${1} extends Object {",
+            "  ${2:int id;}",
+            "",
+            "  ${1}();",
+            "",
+            "  factory ${1}.fromJson(Map<String, dynamic> json) =>",
+            "      _$${1}FromJson(json);",
+            "",
+            "  Map<String, dynamic> toJson() => _$${1}ToJson(this);",
+            "}"
+        ],
+		"description": "page的model",
+		"scope": ""
+    },
+    "z-model:page": {
+		"prefix": "z-model:page",
+		"body": [
+            "@JsonSerializable()",
+            "class ${1}Page extends Object {",
+            "  Paging paging;",
+            "  List<${1}> data;",
+            "",
+            "  ${1}Page(this.data, this.paging);",
+            "",
+            "  factory ${1}Page.fromJson(Map<String, dynamic> json) =>",
+            "      _$${1}PageFromJson(json);",
+            "",
+            "  Map<String, dynamic> toJson() => _$${1}PageToJson(this);",
+            "}"
+        ],
+		"description": "page的model",
+		"scope": ""
+    },
+    "z-model:data": {
+		"prefix": "z-model:data",
+		"body": [
+            "@JsonSerializable()",
+            "class ${1}Data extends Object {",
+            "  List<${1}> data;",
+            "",
+            "  ${1}Data(this.data);",
+            "",
+            "  factory ${1}Data.fromJson(Map<String, dynamic> json) =>",
+            "      _$${1}DataFromJson(json);",
+            "",
+            "  Map<String, dynamic> toJson() => _$${1}DataToJson(this);",
+            "}"
+        ],
+		"description": "data的model",
+		"scope": ""
+    }
+}

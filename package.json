@@ -3,7 +3,7 @@
 	"displayName": "ZoDream Snippets",
 	"description": "ZoDream Template Snippets for VS Code",
 	"icon": "images/icon.png",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"publisher": "zodream",
 	"license":"See License section in README.md",
 	"homepage":"https://github.com/zodream/zodream-snippets/blob/master/README.md",
@@ -34,7 +34,11 @@
     		{
 				"language": "php",
 				"path": "./snippets/snippets-php.json"
- 			}
+			 },
+			{
+				"language": "dart",
+				"path": "./snippets/snippets-dart.json"
+			}
 		]
 	},
 	"scripts": {
